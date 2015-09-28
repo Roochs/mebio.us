@@ -1,5 +1,15 @@
 /* Based on the original mebious.co.uk style. */
 
+@font-face {
+    font-family: "Pixelpoiiz";
+    src: url('/fonts/pp.ttf');
+}
+
+@font-face {
+    font-family: "LoveLetter";
+    src: url('/fonts/ll.ttf');
+}
+
 * {
     margin: 0px;
     padding: 0px;
