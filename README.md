@@ -1,7 +1,10 @@
-mebious.wired
+mebio.us
 =============
 
-A clone of [Mebby](http://mebious.co.uk) written in Ruby using the Sinatra framework.
+A clone of [mebious](http://mebious.co.uk) written in Ruby using the Sinatra framework.
+This repository is the version of the codebase live at https://mebio.us
+
+Below is from the upstream README:
 
 Developed on 2.2.2, may work with earlier versions.
 
