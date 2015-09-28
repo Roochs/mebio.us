@@ -22,3 +22,8 @@ Currently, the API looks like this:
 `GET /posts/n` (n = Integer > 0 and < 100) -> Returns a JSON array of objects representing the last `n` posts.
 
 Write access to be implemented.
+
+Addendum
+========
+
+- hi
