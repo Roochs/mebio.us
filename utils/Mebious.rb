@@ -17,6 +17,8 @@ module Mebious
 
   def fonts
     fonts = [
+      "LoveLetter, Courier, monospace",
+      "Pixelpoiiz, Georgia, serif",
       "Times New Roman, Times, serif",
       "Arial, Helvetica, sans-serif",
       "Georgia, Times New Roman, Times, serif",
