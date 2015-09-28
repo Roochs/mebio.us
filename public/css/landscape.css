@@ -1,0 +1,12 @@
+body {
+		background: #222222;
+}
+
+#nums {
+		color: white;
+		font-size: 8em;
+		font-family: monospace;
+		line-height: 1;
+		text-align: justify;
+		word-wrap: break-word;
+}

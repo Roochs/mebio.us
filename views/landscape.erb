@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>mebious transmission: deterministic</title>
+    <link rel="stylesheet" type="text/css" href="/css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="/css/landscape.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8">
+  </head>
+  <body>
+    <p id="nums">
+      <%= @nums %>
+    </p>
+
+    <script type="text/javascript">
+    // This JavaScript code is licensed under the MIT License.
+    element = document.getElementById("nums");
+    snums   = element.textContent.trim().split(" ");
+    nums    = snums.map(function(n) { return parseInt(n) });
+
+    function update(data) {
+      element.textContent = "";
+      function color(intense) {
+        return "hsl(" + 120 + "," + intense + "%," + intense + "%);";
+      }
+
+      function randval(val) {
+        function rand(m) { return Math.floor(Math.random() * m)}
+
+        if (rand(1)) {
+          return (val - rand(2));
+        }
+        
+        else {
+          return (val + rand(2));
+        }
+      }
+
+      function render(val) {
+        return "<span class='bit' style='color: " + color(randval(val)) + " background: " + color(val) + "'>" + val + "</span>";
+      }
+
+      data.map(function(val) {
+        var node = document.createElement("span");
+        node.innerHTML = render(val);
+        element.appendChild(node);
+      });
+    }
+
+    function singleSort(data) {
+      var copy = data;
+      for(var i = 0; i < copy.length; ++i) {
+        if(copy[i] > copy[i + 1]) {
+          copy[i + 1] ^= copy[i];
+          copy[i] ^= copy[i + 1];
+          copy[i + 1] ^= copy[i];
+
+          return copy;
+        }
+      }
+
+      return false;
+    }
+
+    function doSort(x) {
+      var x1 = singleSort(x);
+      if (!!x1) {
+        update(x1);
+        setTimeout(function() { doSort(x1); }, 10);
+      }
+    }
+
+    doSort(nums);
+    </script>
+  </body>
+</html>
