@@ -1,9 +1,9 @@
 xml.instruct! :xml, :version => '1.0'
 xml.rss :version => "2.0" do
   xml.channel do
-    xml.title "mebious"
+    xml.title "mebio.us"
     xml.description "What's happening at the present day, present time."
-    xml.link "example.com"
+    xml.link "https://mebio.us"
     xml.pubDate Time.now.rfc822
     xml.lastBuildDate Time.now.rfc822
     
@@ -11,9 +11,9 @@ xml.rss :version => "2.0" do
       xml.item {
         xml.title post['text']
         xml.description post['text']
-        xml.link "example.com"
+        xml.link "https://mebio.us"
         xml.pubDate Time.at(post['spawn']).rfc822
-        xml.guid "example.com/##{post['id']}"
+        xml.guid "https://mebio.us/##{post['id']}"
       }        
     }
   end
