@@ -23,8 +23,6 @@ Currently, the API looks like this:
 
 `POST /api/key` (key = API key) -> Makes a post where the text body is the POST field "text", returns a JSON object of success/error state.
 
-Write access to be implemented.
-
 Addendum
 ========
 
