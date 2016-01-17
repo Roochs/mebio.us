@@ -1,12 +1,12 @@
 ---
 mysql:
   host: localhost
-  user: mebious
-  database: mebious
-  password: mebious
+  username: mebio-us
+  database: mebio-us
+  password: mebio-us live
 
 sqlite: 
   database: mebious.db
 
-driver: sqlite
+driver: mysql 
 ...

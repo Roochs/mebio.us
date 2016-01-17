@@ -21,7 +21,7 @@ class MebiousApp < Sinatra::Base
   register Sinatra::CrossOrigin
 
   configure do
-    use Rack::Session::Cookie, :secret => "just an example"
+    use Rack::Session::Cookie, :secret => "kj32lk4jlk32j4lk23j4lk23jlk423'423l4k23l4k23423o4p23o402348"
     use Rack::Csrf, :raise => true, :skip => ['POST:/api/.*']
   end
 

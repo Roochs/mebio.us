@@ -4,3 +4,5 @@ config.json
 tmp/
 unicorn.rb
 mebious.db
+log/
+public/ego.txt
