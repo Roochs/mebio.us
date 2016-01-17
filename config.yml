@@ -1,9 +1,9 @@
 ---
 mysql:
   host: localhost
-  username: mebio-us
-  database: mebio-us
-  password: mebio-us live
+  username: mebious
+  database: mebious
+  password: mebious
 
 sqlite: 
   database: mebious.db
