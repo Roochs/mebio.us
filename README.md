@@ -23,7 +23,12 @@ Currently, the API looks like this:
 
 `POST /api/key` (key = API key) -> Makes a post where the text body is the POST field "text", returns a JSON object of success/error state.
 
-Addendum
-========
+----
 
-- hi
+# Dependencies
+- sinatra
+- sqlite3 
+- builder
+- rack_csrf 
+- sinatra-cross_origin
+- mysql2 (optional, for mysql support)
