@@ -9,11 +9,11 @@ xml.rss :version => "2.0" do
     
     @posts.each { |post|
       xml.item {
-        xml.title post['text']
-        xml.description post['text']
+        xml.title post.text
+        xml.description post.text
         xml.link "https://mebio.us"
-        xml.pubDate Time.at(post['spawn']).rfc822
-        xml.guid "https://mebio.us/##{post['id']}"
+        xml.pubDate Time.at(post.spawn).rfc822
+        xml.guid "https://mebio.us/##{post.id}"
       }        
     }
   end

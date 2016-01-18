@@ -8,5 +8,5 @@ mysql:
 sqlite: 
   database: mebious.db
 
-driver: mysql 
+driver: sqlite 
 ...
