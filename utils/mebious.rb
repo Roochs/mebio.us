@@ -1,3 +1,4 @@
+# coding: utf-8
 require 'rack'
 require 'digest'
 
@@ -6,10 +7,10 @@ module Mebious
   def gencolor(hue)
     sat = rand(100)
     lum = rand(20...100)
-    
+
     return "hsl(#{hue}, #{sat}%, #{lum}%)"
   end
-  
+
   def green
     self.gencolor(120)
   end
@@ -30,9 +31,9 @@ module Mebious
 
     fonts.shuffle.first
   end
-  
+
   def stylize(post)
-    if post['is_admin'] == 1
+    if post.is_admin?
       color = self.red
     else
       color = self.green
@@ -41,13 +42,20 @@ module Mebious
     size = rand(0.8...2.0).round(2)
     x = rand(0.1...40).round(2)
     font = self.fonts
-    
+
     return "color: #{color}; " \
            "font-family: #{font};" \
            "font-size: #{size}em; " \
            "position: relative; " \
            "left: #{x}%;"
-           
+
+  end
+
+  def style_image(image)
+    return "z-index: #{~rand(1...10)}; " \
+           "left: #{rand(0.1...50)}%; " \
+           "opacity: #{rand(0.5...1)}; " \
+           "top: #{rand(7.0..50)}%; "
   end
 
   def corrupt(str)
@@ -71,7 +79,7 @@ module Mebious
       {"o" => "ø"},
       {"i" => "1"}
     ]
-    
+
     if rand(2) == 1
       n = rand(1..2)
       chosen = corruptions.shuffle[0...n]
@@ -80,13 +88,13 @@ module Mebious
           str = str.gsub(k, v)
         }
       }
-      
+
       return str
     else
       return str
-    end    
+    end
   end
-  
+
   def sanitize(str)
     Rack::Utils.escape_html str
   end
@@ -95,5 +103,5 @@ module Mebious
     Digest::SHA512.hexdigest str
   end
 
-  module_function :green, :red, :gencolor, :stylize, :fonts, :corrupt, :sanitize, :digest
+  module_function :green, :red, :gencolor, :stylize, :fonts, :corrupt, :sanitize, :digest, :style_image
 end
